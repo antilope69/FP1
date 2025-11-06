@@ -1,0 +1,78 @@
+#con esta lista realiza una funcion que al pedir un tipo de plato te diga la media del precio de esa categoria
+"""menu = [  
+    ("Entrantes calientes", [
+        ("Sopa de tomate", 4.50),
+        ("Croquetas de jamón", 6.50),
+        ("Calamares a la romana", 9.50),
+    ]),
+    ("Entrantes fríos", [
+        ("Ensalada César", 7.50),
+        ("Gazpacho", 5.00),
+        ("Carpaccio de salmón", 10.00),
+    ]),
+    ("De cuchara", [
+        ("Lentejas", 6.00),
+        ("Sopa de mariscos", 9.00),
+        ("Crema de calabaza", 5.50),
+    ])
+]
+def precio_menu(menu, nombre):
+    total = 0 
+    for categorias , platos , in menu: #hacemos un primer bucle  sobre las categorias de platos 
+        if categorias == nombre:    #si el nombre de la categoria conincide con el que nos pide accederemos a ell
+            for tipo , precio in platos: #dentro de ell hacemos otro for separando los platos y los nombres
+                total += precio   # de uno en uno sumamos al total el precio
+            return total / len(platos)   #lo dividimos entre la cantidad de platos 
+    else:
+        return False
+
+
+
+text = precio_menu(menu, "De cuchara")
+print(text)"""
+
+
+#Descripción:
+
+#Queremos una función systolic_pressure_risk que reciba una lista de tuplas (presión sistólica y 
+#diastólica de cada día) y devuelva una lista de valores booleanos. Cada valor de la lista será True si en esa semana (sublista) hubo más
+#días con una presión sistólica mayor a 119, y False en caso contrario.
+# La lista puede contener muchas semanas
+weekly_readings = [
+    [  # Semana 1
+        (75, 120), (80, 115), (78, 118), (77, 126),
+        (76, 117), (79, 110), (74, 112)
+    ],
+    [  # Semana 2
+        (76, 120), (75, 115), (78, 129), (77, 124),
+        (80, 113), (79, 132), (78, 110)
+    ]
+]
+
+def systolic_pressure_risk(weekly_readings):
+    results = []  # Guardará los resultados de riesgo de cada semana
+    
+    for week in weekly_readings:
+        # Contadores para los días de riesgo y no riesgo
+        risk_days = 0
+        non_risk_days = 0
+        
+        for reading in week:
+            systolic, diastolic = reading  # Desempaquetar la tupla
+            if systolic > 119:  # Si la presión sistólica es mayor a 119
+                risk_days += 1
+            else:
+                non_risk_days += 1
+        
+        # Determinar si la semana tiene más días de riesgo que no riesgo
+        if risk_days > non_risk_days:
+            results.append(True)  # Semana de riesgo
+        else:
+            results.append(False)  # Semana sin riesgo
+    
+    return results
+
+
+text = systolic_pressure_risk(weekly_readings)
+print(text)
+

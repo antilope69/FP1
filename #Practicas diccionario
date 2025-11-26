@@ -1,0 +1,34 @@
+#Desarrolle una función llamada date, que tome como parámetros tres números enteros representando el día, mes y año de una fecha y devuelva un diccionario que represente dicha fecha.
+def date(day, month, year):
+    d = {
+        'Día': day, 'Mes': month, 'Año': year
+    }
+    return d
+#Desarrolle una función llamada division, que tome como parámetros dos números enteros y devuelva un diccionario con el cociente y el resto de la división:
+
+def division(dividendo, divisor):
+    cociente = dividendo // divisor
+    resto =  dividendo % divisor
+    d = {
+        'Cociente': cociente, 'Resto':resto
+        
+    }
+    return d
+
+#Desarrolle una función llamada seconds2hms, que tome como parámetro un número entero que representa una cantidad de segundos 
+#y devuelva un diccionario de tres elementos que representen esa cantidad convertida a horas, minutos y segundos. 
+
+def seconds2hms(numero):
+    minutostotales = numero // 60
+    segundos =  numero % 60
+    minutos = minutostotales % 60
+    horas =  minutostotales //60
+    d = {
+        'horas': horas, "minutos": minutos, "segundos": segundos
+    }
+#Desarrolle una función llamada filter_values, que tome como parámetros un diccionario de parejas (str:int) y dos números enteros. La función debe devolver
+un nuevo diccionario con las parejas del diccionario pasado como primer parámetro cuyos valores se encuentren en el rango comprendido entre el segundo y tercer parámetro.
+
+def filter_values(numbers, start, end):
+
+    return d
